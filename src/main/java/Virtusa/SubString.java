@@ -1,7 +1,7 @@
 package Virtusa;
 
 import java.util.HashMap;
-/**/
+/*Hacker Rank*/
 public class SubString {
     static String s1 = "hello";
     static String s2 = "World";
