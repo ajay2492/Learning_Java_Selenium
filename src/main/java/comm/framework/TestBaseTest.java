@@ -24,7 +24,13 @@ public class TestBaseTest {
         }
     }
 
-    public WebDriver getdriver(){
+    public static WebDriver getdriver(){
         return driver;
+    }
+
+    public static void getWebsite(){
+        driver.get(testBasePage.getConfigValue(Constants.URL));
+        driver.manage().window().maximize();
+        driver.manage().deleteAllCookies();
     }
 }
