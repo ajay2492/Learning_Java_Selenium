@@ -12,15 +12,16 @@ public class HomeTest extends TestBaseTest {
    @BeforeTest
    public static void initialSetpUp(){
        initialSetup();
+
    }
-    /*@AfterTest
+    @AfterTest
     public static void closeAfterTest(){
 
        if(driver != null){
            driver.close();
            driver.quit();
        }
-   }*/
+   }
     @Test
     public static void validateHomePage(){
         HomePage homePage = new HomePage(getdriver());
@@ -29,7 +30,6 @@ public class HomeTest extends TestBaseTest {
   @Test
     public static void close() throws InterruptedException {
         Thread.sleep(3000);
-        driver.get("www.google.com");
-      Thread.sleep(10000);
+        System.out.println(driver.getTitle());
     }
 }

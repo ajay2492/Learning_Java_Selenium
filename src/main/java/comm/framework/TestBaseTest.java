@@ -4,6 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.BeforeSuite;
 
+import java.util.concurrent.TimeUnit;
+
 public class TestBaseTest {
     private static TestBasePage testBasePage;
     private static String browserValue;
@@ -13,6 +15,7 @@ public class TestBaseTest {
         testBasePage = new TestBasePage();
         browserValue = testBasePage.getConfigValue(Constants.BROWSER);
         webDriverInitialization();
+        testBasePage.initializeDriverinTestBasePAge(driver);
         getWebsite();
     }
 
@@ -29,6 +32,7 @@ public class TestBaseTest {
 
     public static void getWebsite(){
         driver.get(testBasePage.getConfigValue(Constants.URL));
+        driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
     }
