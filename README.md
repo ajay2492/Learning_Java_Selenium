@@ -8,3 +8,12 @@ e.g - driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
 Static Wait - If we given the wait as 20 sec then over script will waith till 20 sec it will not care about the element is
 visible in how many sec.
 e.g. Thread.sleep(3000).
+
+Question - what do you understand by logs? and how to integrate the logs in our project
+Ans - Logs are basically of 4 types:
+- info
+- warn
+- error
+- fatal
+
+We can geneterate the logs by using log4j.
