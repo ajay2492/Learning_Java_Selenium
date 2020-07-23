@@ -9,12 +9,11 @@ public class TestBaseTest {
     private static String browserValue;
     public static WebDriver driver;
 
-
-    @BeforeSuite
-    public void initialSetup(){
+    public static void initialSetup(){
         testBasePage = new TestBasePage();
-        this.browserValue = testBasePage.getConfigValue(Constants.BROWSER);
+        browserValue = testBasePage.getConfigValue(Constants.BROWSER);
         webDriverInitialization();
+        getWebsite();
     }
 
     public static void webDriverInitialization(){
