@@ -14,22 +14,32 @@ public class HomeTest extends TestBaseTest {
        initialSetup();
 
    }
-    @AfterTest
+   /* @AfterTest
     public static void closeAfterTest(){
 
        if(driver != null){
            driver.close();
            driver.quit();
        }
-   }
+   }*/
     @Test
     public static void validateHomePage(){
         HomePage homePage = new HomePage(getdriver());
         homePage.validateHomePage();
     }
-  @Test
-    public static void close() throws InterruptedException {
-        Thread.sleep(3000);
-        System.out.println(driver.getTitle());
+    @Test
+    public static void validateOneWayReturnRadioButton(){
+        HomePage homePage = new HomePage(getdriver());
+        homePage.validateOneWayReturnRadioButton();
     }
-}
+    @Test
+    public static void validateCalenderDate() {
+        HomePage homePage = new HomePage(getdriver());
+        homePage.validateCalenderDate();
+    }
+
+    @Test
+    public static void validatePickupDrop() throws InterruptedException {
+        HomePage homePage = new HomePage(getdriver());
+        homePage.validatePickupDrop();
+    }}
