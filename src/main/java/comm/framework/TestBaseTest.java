@@ -17,6 +17,7 @@ public class TestBaseTest {
     public static void initialSetup(){
         testBasePage = new TestBasePage();
         OSValue = OperatingSystemDetector.operatingSystem();
+        getChromeDriverPath();
         browserValue = testBasePage.getConfigValue(Constants.BROWSER);
         webDriverInitialization();
         testBasePage.initializeDriverinTestBasePAge(driver);
