@@ -10,4 +10,5 @@ public class ConstantId {
     public static String CALANDER_BOX = "ContentPlaceHolder1_txtDepartDate";
     public static String PICKUP_CITY = "txtOrigin";
     public static String DROP_CITY = "txtDestination";
+    public static String BOOKNOW = "btnBusSearchNew";
 }

@@ -28,7 +28,7 @@ public class TestBasePage {
         properties = new Properties();
         try {
             FileInputStream fileInputStream = new FileInputStream(Constants.CONFIG_FILE_PATH);
-            Logger.info("Loading Config file to properties Object");
+            //Logger.info("Loading Config file to properties Object");
             properties.load(fileInputStream);
 
         } catch (FileNotFoundException e) {

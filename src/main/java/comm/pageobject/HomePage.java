@@ -68,7 +68,9 @@ public class HomePage extends TestBasePage {
     protected static WebElement getSuggestedDropCity(){
         return findByXpath(ConstantXpath.DROP_CITY);
     }
-
+    protected static WebElement getBookNow(){
+        return findById(ConstantId.BOOKNOW);
+    }
     public static void validateHomePage() {
         Assert.assertTrue(getLoginButton().isDisplayed());
     }
@@ -103,12 +105,20 @@ public class HomePage extends TestBasePage {
 
     }
 
-    public static void validatePickupDrop() throws InterruptedException {
+    public static void validatePickupDrop() {
         getPickupBox().sendKeys(PICKUP_CITY);
         getSuggestedPickupCity().click();
-        getDropBox().sendKeys(DROP_CITY);
-        Thread.sleep(2000);
-        getSuggestedPickupCity().click();
+        getDropBox().click();
+        getSuggestedDropCity().click();
+    }
 
+    public static void validateBookNowButton(){
+        if (getBookNow().isDisplayed()){
+            getBookNow().click();
+        }else
+        {
+            Logger.error("The Webdriver is not able to find \" Book Now \" ");
+            Assert.fail();
+        }
     }
 }
