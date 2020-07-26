@@ -16,4 +16,7 @@ public class ConstantClass {
     public static final String AVAILABLE_SEAT = "seat_available"; /*this locator will return list of all
     the available seats */
 
+    public static final String PROCEED_BUTTON = "seatproceed";
+
+
 }

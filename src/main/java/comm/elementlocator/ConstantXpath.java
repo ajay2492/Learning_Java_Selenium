@@ -19,4 +19,7 @@ public class ConstantXpath {
     public static final String SECOND_BUS = "//td[@class='bustd2']/a[text()='select'][1]";
     public static final String AVAILABLE_SEAT = "//div[@class='seat_available']";
 
+    /* xpath locator for the Passenger page */
+    public static final String PASSANGER_HEADER = "//strong[text()='PASSENGER DETAILS']";
+
 }
