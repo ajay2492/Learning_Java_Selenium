@@ -1,19 +1,18 @@
-# Learning_Java_Selenium
+# Selenium Frame Work with Java Details
 
-Questions - What do you mean by static wait and dynamic wait?
-Answer - Dynamic Wait - Assume we provided the dynamic wait for a element is 30 sec.
-But the element is got visible in 5 sec then rest of the 25 will be ignored.
-e.g - driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+Page Object model is used.
 
-Static Wait - If we given the wait as 20 sec then over script will waith till 20 sec it will not care about the element is
-visible in how many sec.
-e.g. Thread.sleep(3000).
+ElementLocator package is created to declare locators as per "Xpath", "ClassName", & "Id".
 
-Question - what do you understand by logs? and how to integrate the logs in our project
-Ans - Logs are basically of 4 types:
-- info
-- warn
-- error
-- fatal
+FrameWork package is used to methods in top level clases, details are below
 
-We can geneterate the logs by using log4j.
+ - Constans class is created to declare constand values like chromedriver path, config file path, explicit wait time, etc.
+ - Logger class is created to define methods to log the logs in the console without log4js.
+ - Message class is used to declare constand message strings like error messages, logger messages etc.
+ - OperatingSystemDetector class is used to detect os of the system, so we can take the path of the chrome driver accordingly.
+ - TestBasePage is create to define the common used methods linke scroll, wait etc.
+ - TestBaseTest is created to initilaze the WebDriver.
+ - WebElemnts class is created to define detector method like via xpath,className etc, so we don't need to declare driver.findElements again and again
+ 
+ PageObject pacakge is use to declare class of page elemets
+ 
