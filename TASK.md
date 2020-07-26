@@ -8,7 +8,7 @@
 - select 1st option from the suggested drop list or "Kuala Lumpur".
 - Click on the Book Now button.
 - Select 2nd available bus.
-- Select at least 1or 2 available seats.
+- Select 2 available seats, if two are not available then select what ever seat is left.
 - Asser if all the seats are filled.
 - Click on the Processed button.
 - Fill some dummy details.

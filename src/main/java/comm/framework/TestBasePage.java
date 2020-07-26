@@ -1,8 +1,11 @@
 package comm.framework;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -14,9 +17,19 @@ public class TestBasePage {
 
     protected static Properties properties;
     protected static WebDriver driver;
+    protected static JavascriptExecutor javascriptExecutor;
+    protected static WebDriverWait explicitWait;
 
     public TestBasePage() {
         loadconfigFile();
+    }
+
+    public void javaScriptExecutor(){
+        javascriptExecutor = (JavascriptExecutor) driver;
+    }
+
+    public void setExplicitWait(){
+        explicitWait = new WebDriverWait(driver,Constants.EXPLICIT_WAIT_TIME);
     }
 
     public void initializeDriverinTestBasePAge(WebDriver driver) {
@@ -95,5 +108,23 @@ public class TestBasePage {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-mm-dd");
         Logger.info("Executing the currentDate method & today date is " + simpleDateFormat.format(date));
         return simpleDateFormat.format(date).toString();
+    }
+
+    public static void verticalScrollByElement(WebElement scrollTillelement){
+        javascriptExecutor.executeScript("arguments[0].scrollIntoView();",scrollTillelement);
+    }
+    public static void verticalScrollByPixel(String inputPixel){
+        javascriptExecutor.executeScript("window.scrollBy(0," +inputPixel+")");
+    }
+    public static void verticalScrollTillEnd(){
+        javascriptExecutor.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+    }
+
+    public static void explicitWaitByClassName(String elementToVisible){
+        explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.className(elementToVisible)));
+    }
+
+    public static void explicitWaitByXpath(String elementToVisible){
+        explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(elementToVisible)));
     }
 }

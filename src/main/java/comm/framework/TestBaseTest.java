@@ -21,6 +21,8 @@ public class TestBaseTest {
         browserValue = testBasePage.getConfigValue(Constants.BROWSER);
         webDriverInitialization();
         testBasePage.initializeDriverinTestBasePAge(driver);
+        testBasePage.javaScriptExecutor();
+        testBasePage.setExplicitWait();
         getWebsite();
     }
 
