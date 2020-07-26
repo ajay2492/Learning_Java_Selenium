@@ -11,4 +11,8 @@ public class Constants {
     public static final String BROWSER = "browser";
     public static final String URL = "url";
 
+    public static final int EXPLICIT_WAIT_TIME = 30;
+
+    public static final int SEAT_SELECTION = 2;
+
 }

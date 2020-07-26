@@ -50,8 +50,8 @@ public class HomePage extends TestBasePage {
     protected static WebElement getNextMonthButton(){
         return findByXpath(ConstantXpath.NEXT_MONTH);
     }
-    protected static WebElement get20thDate(){
-        return findByXpath(ConstantXpath.SELECT_20);
+    protected static WebElement getMonthDate(){
+        return findByXpath(ConstantXpath.MONTH_DATE);
     }
     protected static WebElement getCalenderBox(){
         return findById(ConstantId.CALANDER_BOX);
@@ -90,7 +90,7 @@ public class HomePage extends TestBasePage {
             int CurrentMonth = MonthValue.monthValue(getMonth().getText());
             if(getNextMonthButton().isDisplayed()){
                 getNextMonthButton().click();
-                get20thDate().click();
+                getMonthDate().click();
             }else {
                 Logger.error("NextMonth button is not visible in the page. Assertion is executed");
                 Assert.fail();

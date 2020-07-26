@@ -1,13 +1,13 @@
 package comm.busticket.homepage;
 
+import comm.elementlocator.ConstantXpath;
 import comm.framework.Logger;
 import comm.framework.TestBasePage;
 import comm.framework.TestBaseTest;
 import comm.pageobject.HomePage;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.*;
 
 public class HomeTest extends TestBaseTest {
     @BeforeTest
@@ -15,14 +15,15 @@ public class HomeTest extends TestBaseTest {
         initialSetup();
     }
 
-    /* @AfterTest
+    @AfterClass
      public static void closeAfterTest(){
 
         if(driver != null){
+            Logger.info("Closing the WebDriver");
             driver.close();
             driver.quit();
         }
-    }*/
+    }
     @Test(priority = 1)
     public static void validateHomePage() {
         HomePage homePage = new HomePage(getdriver());
